@@ -29,7 +29,7 @@ module vendingMachine (
         change = nickel*5 + dime*10 + quarter*25;
 
         //Increase total by coins unless total is over 100 (then reset)
-        total_next = (total>=100) ? total + change : change;
+        total_next = (total<100) ? total + change : change;
 
         //Valid if there is more than 100 cents in the vending machine
         valid = (total >= 100);

@@ -45,8 +45,9 @@ module vendingMachine_tb;
             coins = i;
             @(posedge clk); 
         end : coinfor
-
+        
         coins = 'b000;
+        repeat(2) @(posedge clk);
 
         //Reset again
         reset_n = 0;
