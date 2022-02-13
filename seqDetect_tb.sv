@@ -11,7 +11,7 @@ Date created: February 12, 2022
 Test bench for sequence detector
 
 code for modelsim:
-vsim work.seqDetect_tb; add wave sim:*; run -all
+vsim work.seqDetect_tb; add wave -r sim:/seqDetect_tb/*; run -all
 
 *********/
 
