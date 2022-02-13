@@ -32,15 +32,15 @@ module seqDetect #(parameter N=6) (
         lastNbits_next[0] = a;
 
         //Valid must be all bits ANDED - lastNbits XNOR'd w seq
-        valid = &(lastNbits ~^ seq)
+        valid = &(lastNbits ~^ seq);
     end : bitshift
 
     always_ff @(posedge clk, negedge reset_n) begin : clkff
         //Take next value on clk unless reset
         if(~reset_n) 
-            lastNbits <= 'b000
+            lastNbits <= 'b000;
         else
-            lastNbits <= lastNbits_next
+            lastNbits <= lastNbits_next;
     end : clkff
 
 endmodule
