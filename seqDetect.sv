@@ -29,7 +29,8 @@ module seqDetect #(parameter N=6) (
         lastNbits_next = { lastNbits[N-2:0], a };
         
         //Take next counter so it can hold when all bits are valid
-        counter_next = { counter[N-2:0], 'b1 };
+        counter_next = counter << 1;
+        counter_next[0] = 'b1;
 
         //Valid must be all bits ANDED - lastNbits XNOR'd w seq
         valid = 0;

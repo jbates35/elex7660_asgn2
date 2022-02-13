@@ -18,8 +18,8 @@ vsim work.seqDetect_tb; add wave -r sim:/seqDetect_tb/*; run -all
 `define INPUT1  'b01101011
 `define SEQ1    'b011
 
-`define INPUT2  'b11111011
-`define SEQ2    'b111
+`define INPUT2  'b11010000
+`define SEQ2    'b000
 
 `define M 3
 
@@ -49,7 +49,7 @@ module seqDetect_tb;
         inputSequence = `INPUT1; //Store some set of bits in a 8 bit word
         seq = `SEQ1; //Setup correct seq
 
-        a = 1'bx; // Indeterminate while sequence is off
+        a = 1'b0; // Indeterminate while sequence is off
 
         //For loop that runs through each bit
         for (int i = 0; i<8; i++) begin : for_seq
@@ -57,7 +57,7 @@ module seqDetect_tb;
             @(posedge clk);         //Cycle
         end : for_seq
 
-        a = 1'bx; // Indeterminate while sequence is off
+        a = 1'b0; // Indeterminate while sequence is off
 
         //Run clock 3 more times to clear sequence
         repeat(3) @(posedge clk);
@@ -72,7 +72,7 @@ module seqDetect_tb;
         inputSequence = `INPUT2; //Store some set of bits in a 8 bit word
         seq = `SEQ2;             //Setup correct seq
 
-        a = 1'bx; // Indeterminate while sequence is off
+        a = 1'b0; // Indeterminate while sequence is off
         
         //For loop that runs through each bit
         for (int i = 0; i<8; i++) begin : for_seq
@@ -80,7 +80,7 @@ module seqDetect_tb;
             @(posedge clk);         //Cycle
         end : for_seq
 
-        a = 1'bx; // Indeterminate while sequence is off
+        a = 1'b0; // Indeterminate while sequence is off
 
         //Run clock 3 more times to clear sequence
         repeat(3) @(posedge clk);
