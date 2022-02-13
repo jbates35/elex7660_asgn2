@@ -1,5 +1,5 @@
 /********
-seqDetect.sv
+seqDetect_tb.sv
 
 Written by Jimmy Bates (A01035957)
 
